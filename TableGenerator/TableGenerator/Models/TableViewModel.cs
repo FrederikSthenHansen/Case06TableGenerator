@@ -5,7 +5,11 @@ using System.Threading.Tasks;
 
 namespace TableGenerator.Models
 {
-    public class Table
+    public class TableViewModel
     {
+        public Table myTable;
+
+        
+
     }
 }

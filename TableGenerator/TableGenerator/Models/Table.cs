@@ -7,5 +7,12 @@ namespace TableGenerator.Models
 {
     public class Table
     {
+        int[] currentRow;
+        int[][] Rows;
+
+
+
+
+        
     }
 }
