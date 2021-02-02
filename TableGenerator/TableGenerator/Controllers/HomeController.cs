@@ -12,10 +12,13 @@ namespace TableGenerator.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private Models.TableViewModel _viewmodel;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            
+            
         }
 
         public IActionResult Index()
@@ -25,7 +28,9 @@ namespace TableGenerator.Controllers
 
         public IActionResult Privacy()
         {
-            return View();
+            _viewmodel = new Models.TableViewModel(false);
+            return View(_viewmodel);
+            
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

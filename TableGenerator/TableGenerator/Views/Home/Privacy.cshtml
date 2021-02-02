@@ -1,6 +1,26 @@
-﻿@{
+﻿ @model TableGenerator.Models.TableViewModel
+@{
     ViewData["Title"] = "Privacy Policy";
 }
 <h1>@ViewData["Title"]</h1>
 
+
 <p>Use this page to detail your site's privacy policy.</p>
+
+<table class="table table-bordered">
+    
+        @for (int y = 0; y < 10; y++)
+         {
+            for (int x = 0; x < 10; x++)
+            {
+                Model.RowGraphic = Model.RowGraphic + $"<td>{Model.myTable.Rows[y][x]}</td>";
+            }
+            <tbody>
+            <tr>@Html.Raw(Model.RowGraphic)</tr>
+            </tbody>
+            //reset string after printing
+            Model.RowGraphic = "";
+
+        }
+    
+    </table>

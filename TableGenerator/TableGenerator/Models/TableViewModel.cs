@@ -8,8 +8,14 @@ namespace TableGenerator.Models
     public class TableViewModel
     {
         public Table myTable;
+        public string RowGraphic { get; set; }
 
-        
 
+        public TableViewModel(bool Horizontal)
+        {
+            RowGraphic = "";
+            myTable = new Table(Horizontal);
+           
+        }
     }
 }
