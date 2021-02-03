@@ -8,17 +8,22 @@ namespace TableGenerator.Models
     public class Table
     {
         int counter = 1;
-        int[] currentRow;
         public int[][] Rows;
 
 
-        public Table(bool Horizontal)
+        public Table(int orientation)
         {   Rows = new int[10][];
             for (int r = 0; r < 10; r++) { Rows[r] = new int[10]; }
 
-            if (Horizontal == true) { MakeHorizontal();}
-            else { MakeVertical(); }
+            if (orientation==2) { MakeHorizontal();}
+            else if(orientation==1) { MakeVertical(); }
+            
         }
+        //public Table()
+        //{
+        //    Rows = new int[10][];
+        //    for (int r = 0; r < 10; r++) { Rows[r] = new int[10]; }
+        //}
 
         private void MakeHorizontal() 
         {
