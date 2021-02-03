@@ -11,7 +11,22 @@
 {
     <div style="text-align:center">
         <div class="form-group">
-            @Html.DropDownListFor(m => m.orientation, Model.Orientations,"orientation" ,"Select Orientation")
+            @Html.DropDownListFor(m => m.SelectedOrientation, Model.Orientations, "Select Orientation", htmlAttributes: new { @class = "form-control", id = "SelectedOrientation" })
         </div>
     </div>
 }
+
+@section Scripts 
+{
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+    <script type="text/javascript">
+        $('#SelectedOrientation').change(function ()
+        {
+            @*var selectedOrientation = $("#SelectedOrientation").val();
+
+            $.getJSON('@Url.Action("Privacy")', { orientatation: selectedOrientation }, function () { });*@
+                
+        });
+    </script>
+}
+

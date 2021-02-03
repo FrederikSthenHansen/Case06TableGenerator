@@ -51,10 +51,10 @@ namespace TableGenerator.Controllers
 
         //    return View(model);
         //}
-        [HttpPost]
-        public IActionResult Privacy(int orientation )
+        //[HttpPost]
+        public IActionResult Privacy(/*[Bind("SelectedOrientation")] TableViewModel model*/int orientation)
         {
-            _viewmodel.myTable= new Table(/*placeholder number*/ _viewmodel.orientation);
+            _viewmodel.myTable= new Table(/*placeholder number*/ orientation);
             return View(_viewmodel);
             
         }

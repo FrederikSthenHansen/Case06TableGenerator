@@ -1,4 +1,4 @@
-﻿ @model TableGenerator.Models.TableViewModel
+﻿@model TableGenerator.Models.TableViewModel
 @{
     ViewData["Title"] = "Generate Table";
 
@@ -6,22 +6,43 @@
 <h1>@ViewData["Title"]</h1>
 
 
-<p>Use this page to detail your site's privacy policy.</p>
+@using (Html.BeginForm("Index", "HomeController", FormMethod.Post))
+{
+    <div style="text-align:center">
+        <div class="form-group">
+            @Html.DropDownListFor(m => m.SelectedOrientation, Model.Orientations, "Select Orientation", htmlAttributes: new { @class = "form-control", id = "SelectedOrientation" })
+        </div>
+    </div>
+}
 
 <table class="table table-bordered">
-    
-        @for (int y = 0; y < 10; y++)
-         {
-            for (int x = 0; x < 10; x++)
-            {
-                Model.RowGraphic = Model.RowGraphic + $"<td>{Model.myTable.Rows[y][x]}</td>";
-            }
-            <tbody>
-            <tr>@Html.Raw(Model.RowGraphic)</tr>
-            </tbody>
-            //reset string after printing
-            Model.RowGraphic = "";
 
+    @for (int y = 0; y < 10; y++)
+    {
+        for (int x = 0; x < 10; x++)
+        {
+            Model.RowGraphic = Model.RowGraphic + $"<td>{Model.myTable.Rows[y][x]}</td>";
         }
-    
-    </table>
+        <tbody>
+            <tr>@Html.Raw(Model.RowGraphic)</tr>
+        </tbody>
+        //reset string after printing
+        Model.RowGraphic = "";
+
+    }
+
+</table>
+@section Scripts
+{
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+<script type="text/javascript">
+        $('#SelectedOrientation').change(function ()
+        {
+            var selectedOrientation = $("#SelectedOrientation").val;
+            if(selectedOrientation == 1){ $.getJSON('@Url.Action("Privacy")', { orientatation: 1 }}
+            if(selectedOrientation == 2){ $.getJSON('@Url.Action("Privacy")', { orientatation: 2 }}
+
+
+        });
+</script>
+}

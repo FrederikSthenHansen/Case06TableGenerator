@@ -14,7 +14,8 @@ namespace TableGenerator.Models
 
         //public Orientation TableOrientation { get {return Enum.GetValues}; set; }
 
-        public int orientation { get; set; }
+       
+        public int SelectedOrientation { get; set; }
        
 
         public List<SelectListItem> Orientations { get; set; }
@@ -29,9 +30,9 @@ namespace TableGenerator.Models
             RowGraphic = "";
             //if (buildTable == true)
             //{
-                if (orientation == 2)
+                if (SelectedOrientation == 2)
                 { myTable = new Table(2); }
-                if (orientation == 1)
+                if (SelectedOrientation == 1)
                 { myTable = new Table(1); }
             else { myTable = new Table(3); }
             //}
