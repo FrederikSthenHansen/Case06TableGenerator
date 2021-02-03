@@ -19,9 +19,9 @@ namespace TableGenerator.Controllers
         {
             _logger = logger;
             _viewmodel = new TableViewModel();
-            _viewmodel.Orientations = new List<SelectListItem>();
-            _viewmodel.Orientations.Add(new SelectListItem() { Text = "Vertical", Value = "1", Selected = false });
-            _viewmodel.Orientations.Add(new SelectListItem() { Text = "Horizontal", Value = "2", Selected = false });
+            //_viewmodel.Orientations = new List<SelectListItem>();
+            //_viewmodel.Orientations.Add(new SelectListItem() { Text = "Vertical", Value = "1", Selected = false });
+            //_viewmodel.Orientations.Add(new SelectListItem() { Text = "Horizontal", Value = "2", Selected = false });
 
         }
         [HttpGet]
@@ -51,9 +51,10 @@ namespace TableGenerator.Controllers
 
         //    return View(model);
         //}
-        public IActionResult Privacy([Bind(include:"orientation")] TableViewModel myViewModel )
+        [HttpPost]
+        public IActionResult Privacy(int orientation )
         {
-            _viewmodel.myTable= new Table(/*placeholder number*/ 0);
+            _viewmodel.myTable= new Table(/*placeholder number*/ _viewmodel.orientation);
             return View(_viewmodel);
             
         }

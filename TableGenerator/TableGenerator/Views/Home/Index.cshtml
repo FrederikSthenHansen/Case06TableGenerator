@@ -7,11 +7,11 @@
 
 
 </div>
-@using (Html.BeginForm("ActionName", "ControllerName", FormMethod.Post))
+@using (Html.BeginForm("Index", "HomeController", FormMethod.Post))
 {
     <div style="text-align:center">
         <div class="form-group">
-            @Html.DropDownListFor(m => m.orientation, Model.Orientations, "Select Orientation")
+            @Html.DropDownListFor(m => m.orientation, Model.Orientations,"orientation" ,"Select Orientation")
         </div>
     </div>
 }

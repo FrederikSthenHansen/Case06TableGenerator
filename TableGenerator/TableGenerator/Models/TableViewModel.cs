@@ -22,6 +22,9 @@ namespace TableGenerator.Models
 
         public TableViewModel(/*bool buildTable*/)
         {
+            Orientations = new List<SelectListItem>();
+            Orientations.Add(new SelectListItem() { Text = "Vertical", Value = "1", Selected = false });
+            Orientations.Add(new SelectListItem() { Text = "Horizontal", Value = "2", Selected = false });
 
             RowGraphic = "";
             //if (buildTable == true)
