@@ -22,10 +22,10 @@
 <script type="text/javascript">
         $('#SelectedOrientation').change(function ()
         {
-            //var selectedOrientation = $("#SelectedOrientation").val();
+            var selectedOrientation = $("#SelectedOrientation").val();
 
-            if (selectedOrientation = 1) {$.getJSON('@Url.Action("VerticalTable")', { orientatation: 1 }, function () { });}
-            if (selectedOrientation = 2) {$.getJSON('@Url.Action("HorizontalTable")', { orientatation: 2 }, function () { });}
+            if (selectedOrientation = "Vertical") {$.getJSON('@Url.Action("VerticalTable")');}
+            if (selectedOrientation = "Horizontal") {$.getJSON('@Url.Action("HorizontalTable")');}
 
         });
 </script>
