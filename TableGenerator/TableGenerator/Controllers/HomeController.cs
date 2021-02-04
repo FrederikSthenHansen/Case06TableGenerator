@@ -54,6 +54,7 @@ namespace TableGenerator.Controllers
         //[HttpPost]
         public IActionResult Privacy(/*[Bind("SelectedOrientation")] TableViewModel model*/)
         {
+        //    _viewmodel.SelectedOrientation= Request.Form()
             _viewmodel.myTable= new Table(/*placeholder number*/ 0);
             return View(_viewmodel);
             
