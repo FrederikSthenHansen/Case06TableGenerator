@@ -22,7 +22,7 @@
 <script type="text/javascript">
         $('#SelectedOrientation').change(function ()
         {
-            var selectedOrientation = $("#SelectedOrientation").val();
+            var selectedOrientation = $("#SelectedOrientation").text;
 
             if (selectedOrientation = "Vertical") {$.getJSON('@Url.Action("VerticalTable")');}
             if (selectedOrientation = "Horizontal") {$.getJSON('@Url.Action("HorizontalTable")');}
