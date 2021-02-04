@@ -1,0 +1,34 @@
+﻿@model TableGenerator.Models.TableViewModel
+@{
+    ViewData["Title"] = "VerticalTable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>VerticalTable</h1>
+
+
+<table class="table table-bordered">
+
+    @for (int y = 0; y < 10; y++)
+    {
+        for (int x = 0; x < 10; x++)
+        {
+            Model.RowGraphic = Model.RowGraphic + $"<td>{Model.myTable.Rows[y][x]}</td>";
+        }
+        <tbody>
+            <tr>@Html.Raw(Model.RowGraphic)</tr>
+        </tbody>
+        //reset string after printing
+        Model.RowGraphic = "";
+
+    }
+
+</table>
+
+@section Scripts
+{
+@*@Scripts.Render("~/bundles/jqueryval")*@
+<script type="text/javascript">
+        
+</script>
+}

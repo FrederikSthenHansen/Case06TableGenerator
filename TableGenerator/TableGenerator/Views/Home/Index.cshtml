@@ -19,14 +19,15 @@
 @section Scripts 
 {
     @*@Scripts.Render("~/bundles/jqueryval")*@
-    <script type="text/javascript">
+<script type="text/javascript">
         $('#SelectedOrientation').change(function ()
         {
-            @*var selectedOrientation = $("#SelectedOrientation").val();
+            //var selectedOrientation = $("#SelectedOrientation").val();
 
-            $.getJSON('@Url.Action("Privacy")', { orientatation: selectedOrientation }, function () { });*@
-                
+            if (selectedOrientation = 1) {$.getJSON('@Url.Action("VerticalTable")', { orientatation: 1 }, function () { });}
+            if (selectedOrientation = 2) {$.getJSON('@Url.Action("HorizontalTable")', { orientatation: 2 }, function () { });}
+
         });
-    </script>
+</script>
 }
 

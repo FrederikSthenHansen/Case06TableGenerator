@@ -52,11 +52,24 @@ namespace TableGenerator.Controllers
         //    return View(model);
         //}
         //[HttpPost]
-        public IActionResult Privacy(/*[Bind("SelectedOrientation")] TableViewModel model*/int orientation)
+        public IActionResult Privacy(/*[Bind("SelectedOrientation")] TableViewModel model*/)
         {
-            _viewmodel.myTable= new Table(/*placeholder number*/ orientation);
+            _viewmodel.myTable= new Table(/*placeholder number*/ 0);
             return View(_viewmodel);
             
+        }
+
+        public IActionResult HorizontalTable()
+        {
+            _viewmodel.myTable = new Table(/*placeholder number*/ 2);
+            return View(_viewmodel);
+        }
+
+        public IActionResult VerticalTable()
+        {
+
+            _viewmodel.myTable = new Table(/*placeholder number*/ 1);
+            return View(_viewmodel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
