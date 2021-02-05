@@ -5,32 +5,4 @@
 }
 
 <h1>Horizontal Table</h1>
-
-
 <partial name="_TableDisplay" model="@Model.myTable" />
-
-@*<table class="table table-bordered">
-
-    @for (int y = 0; y < 10; y++)
-    {
-        for (int x = 0; x < 10; x++)
-        {
-            Model.RowGraphic = Model.RowGraphic + $"<td>{Model.myTable.Rows[y][x]}</td>";
-        }
-        <tbody>
-            <tr>@Html.Raw(Model.RowGraphic)</tr>
-        </tbody>
-        //reset string after printing a row
-        Model.RowGraphic = "";
-
-    }
-
-</table>*@
-
-@section Scripts
-{ 
-@*@Scripts.Render("~/bundles/jqueryval")*@
-<script type="text/javascript">
-
-</script>
-}

@@ -19,11 +19,8 @@ namespace TableGenerator.Controllers
         {
             _logger = logger;
             _viewmodel = new TableViewModel();
-            //_viewmodel.Orientations = new List<SelectListItem>();
-            //_viewmodel.Orientations.Add(new SelectListItem() { Text = "Vertical", Value = "1", Selected = false });
-            //_viewmodel.Orientations.Add(new SelectListItem() { Text = "Horizontal", Value = "2", Selected = false });
-
         }
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -38,16 +35,6 @@ namespace TableGenerator.Controllers
             return View(_viewmodel);
         }
 
-       
-        //[HttpPost]
-        public IActionResult Privacy(/*[Bind("SelectedOrientation")] TableViewModel model*/)
-        {
-        //   
-            _viewmodel.myTable= new Table(/*placeholder number*/ 0);
-            return View();
-            
-        }
-
         public IActionResult DynamicTable(int param)
         {
             //String whatDO = Request.Form["SelectedOrientation"];
@@ -58,14 +45,14 @@ namespace TableGenerator.Controllers
 
         public IActionResult HorizontalTable()
         {
-            _viewmodel.myTable = new Table(/*placeholder number*/ 2);
+            _viewmodel.myTable = new Table( 2);
             return View(_viewmodel);
         }
 
         public IActionResult VerticalTable()
         {
 
-            _viewmodel.myTable = new Table(/*placeholder number*/ 1);
+            _viewmodel.myTable = new Table( 1);
             return View(_viewmodel);
         }
 
