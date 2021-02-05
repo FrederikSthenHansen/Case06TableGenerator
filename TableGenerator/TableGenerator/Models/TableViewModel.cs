@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +15,13 @@ namespace TableGenerator.Models
         //public enum Orientation {Vertical, Horizontal}
 
         //public Orientation TableOrientation { get {return Enum.GetValues}; set; 
+        [BindProperty]
         public int SelectedOrientation { get; set; }
         public List<SelectListItem> Orientations { get; set; }
 
         private static bool orientationsDone = false;
 
-
+       
         public TableViewModel(/*bool buildTable*/)
         {
             if (orientationsDone == false)
@@ -36,7 +38,7 @@ namespace TableGenerator.Models
             { myTable = new Table(2); }
             if (SelectedOrientation == 1)
             { myTable = new Table(1); }
-            else { myTable = new Table(3); }
+            //else { myTable = new Table(3); }
         }
     }
 }

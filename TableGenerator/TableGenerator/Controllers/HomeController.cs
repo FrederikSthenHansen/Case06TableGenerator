@@ -35,11 +35,13 @@ namespace TableGenerator.Controllers
             return View(_viewmodel);
         }
 
-        public IActionResult DynamicTable(int param)
+        [HttpPost]
+        public IActionResult DynamicTable()
         {
+            string orientation =Request.Form["SelectedOrientation"];
             //String whatDO = Request.Form["SelectedOrientation"];
-            if (param == 1) { _viewmodel.myTable = new Table(1); }
-            if (param == 2) { _viewmodel.myTable = new Table(2); }
+            if (orientation == "Vertical") { _viewmodel.myTable = new Table(1); }
+            if (orientation == "Horizontal") { _viewmodel.myTable = new Table(2); }
             return View(_viewmodel);
         }
 

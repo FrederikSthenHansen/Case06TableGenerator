@@ -7,20 +7,34 @@
 
 
 </div>
+
 @using (Html.BeginForm("DynamicTable", "HomeController", FormMethod.Post))
-{
-    <div style="text-align:center">
-        <div class="form-group" id="SelectedOrientation" >
-            @Html.DropDownListFor(m => m.SelectedOrientation, Model.Orientations, "Select Orientation", htmlAttributes: new { @class = "form-control", id = "SelectedOrientation" })
-        </div>
-        @*<div><p class="button"></p><a class="btn-primary" asp-controller="Home" asp-route="Privacy/@Model.SelectedOrientation"></a></div>*@
-    </div>
+    {
+        <div style="text-align:center">
+            <div class="form-group" id="SelectedOrientation" >
+                @Html.DropDownListFor(m => m.SelectedOrientation, Model.Orientations, "Select Orientation", htmlAttributes: new { @class = "form-control", id = "SelectedOrientation" })
+            </div>-->
+            @*<div><p class="button"></p><a class="btn-primary" asp-controller="Home" asp-action="DynamicTable"></a></div>*@
+</div>
 }
 
-@section Scripts 
+@*<form asp-action="DynamicTable" method="post" role="form">
+    @Html.DropDownListFor(m => m.SelectedOrientation, Model.Orientations, "Select Orientation")*@
+    <input type="button"
+           value="Generate Table from selected orientation"
+           asp-action="VerticalTable" />
+@*</form>*@
+
+
+
+@*<input type="button"
+       value="Go Somewhere Else"
+       onclick="location.href='<%: Url.Action(" Action", "Controller" ) %>'" />*@
+
+@section Scripts
 {
     @*@Scripts.Render("~/bundles/jqueryval")*@
-<script type="text/javascript">
+    <script type="text/javascript">
         $('#SelectedOrientation').change(function ()
         {
             var selectedOrientation = $("#SelectedOrientation").text;
@@ -29,6 +43,6 @@
             if (selectedOrientation = "Horizontal") {$.getJSON('@Url.Action("DynamicTable")');}
 
         });
-</script>
+    </script>
 }
 
