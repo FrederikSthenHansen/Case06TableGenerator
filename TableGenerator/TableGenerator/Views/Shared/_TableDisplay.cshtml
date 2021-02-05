@@ -1,0 +1,21 @@
+﻿@model Table
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+<table class="table table-bordered">
+
+    @for (int y = 0; y < 10; y++)
+    {
+         string RowGraphic = "";
+        for (int x = 0; x < 10; x++)
+        {
+            RowGraphic =RowGraphic + $"<td>{Model.Rows[y][x]}</td>";
+        }
+        <tbody>
+            <tr>@Html.Raw(RowGraphic)</tr>
+        </tbody>
+    }
+
+</table>

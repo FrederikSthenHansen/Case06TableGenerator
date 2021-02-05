@@ -48,10 +48,11 @@ namespace TableGenerator.Controllers
             
         }
 
-        public IActionResult DynamicTable()
+        public IActionResult DynamicTable(int param)
         {
-            String whatDO = Request.Form["SelectedOrientation"];
-            if (whatDO == "1") { _viewmodel.myTable = new Table(1); }
+            //String whatDO = Request.Form["SelectedOrientation"];
+            if (param == 1) { _viewmodel.myTable = new Table(1); }
+            if (param == 2) { _viewmodel.myTable = new Table(2); }
             return View(_viewmodel);
         }
 

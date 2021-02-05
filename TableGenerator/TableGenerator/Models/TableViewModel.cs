@@ -17,12 +17,18 @@ namespace TableGenerator.Models
         public int SelectedOrientation { get; set; }
         public List<SelectListItem> Orientations { get; set; }
 
+        private static bool orientationsDone = false;
+
 
         public TableViewModel(/*bool buildTable*/)
         {
-            Orientations = new List<SelectListItem>();
-            Orientations.Add(new SelectListItem() { Text = "Vertical", Value = "1", Selected = false });
-            Orientations.Add(new SelectListItem() { Text = "Horizontal", Value = "2", Selected = false });
+            if (orientationsDone == false)
+            {
+                Orientations = new List<SelectListItem>();
+                Orientations.Add(new SelectListItem() { Text = "Vertical", Value = "1", Selected = false });
+                Orientations.Add(new SelectListItem() { Text = "Horizontal", Value = "2", Selected = false });
+                orientationsDone = true;
+            }
 
             RowGraphic = "";
            

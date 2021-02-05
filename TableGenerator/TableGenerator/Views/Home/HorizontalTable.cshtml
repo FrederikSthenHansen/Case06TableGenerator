@@ -6,7 +6,10 @@
 
 <h1>Horizontal Table</h1>
 
-<table class="table table-bordered">
+
+<partial name="_TableDisplay" model="@Model.myTable" />
+
+@*<table class="table table-bordered">
 
     @for (int y = 0; y < 10; y++)
     {
@@ -22,7 +25,7 @@
 
     }
 
-</table>
+</table>*@
 
 @section Scripts
 { 

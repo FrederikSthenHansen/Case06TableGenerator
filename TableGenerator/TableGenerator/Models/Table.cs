@@ -22,11 +22,6 @@ namespace TableGenerator.Models
             //reset counter after making table
             counter = 1;
         }
-        //public Table()
-        //{
-        //    Rows = new int[10][];
-        //    for (int r = 0; r < 10; r++) { Rows[r] = new int[10]; }
-        //}
 
         private void MakeHorizontal() 
         {
