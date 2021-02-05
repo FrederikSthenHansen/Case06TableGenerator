@@ -7,7 +7,7 @@
 
 
 </div>
-@using (Html.BeginForm("Index", "HomeController", FormMethod.Post))
+@using (Html.BeginForm("DynamicTable", "HomeController", FormMethod.Post))
 {
     <div style="text-align:center">
         <div class="form-group" id="SelectedOrientation" >
@@ -25,8 +25,8 @@
         {
             var selectedOrientation = $("#SelectedOrientation").text;
 
-            if (selectedOrientation = "Vertical") {$.getJSON('@Url.Action("VerticalTable")');}
-            if (selectedOrientation = "Horizontal") {$.getJSON('@Url.Action("HorizontalTable")');}
+            if (selectedOrientation = "Vertical") { $.getJSON('@Url.Action("DynamicTable")', {});}
+            if (selectedOrientation = "Horizontal") {$.getJSON('@Url.Action("DynamicTable")');}
 
         });
 </script>

@@ -10,14 +10,11 @@ namespace TableGenerator.Models
     {
         public Table myTable;
         public string RowGraphic { get; set; }
+
         //public enum Orientation {Vertical, Horizontal}
 
-        //public Orientation TableOrientation { get {return Enum.GetValues}; set; }
-
-       
+        //public Orientation TableOrientation { get {return Enum.GetValues}; set; 
         public int SelectedOrientation { get; set; }
-       
-
         public List<SelectListItem> Orientations { get; set; }
 
 
@@ -28,15 +25,12 @@ namespace TableGenerator.Models
             Orientations.Add(new SelectListItem() { Text = "Horizontal", Value = "2", Selected = false });
 
             RowGraphic = "";
-            //if (buildTable == true)
-            //{
-                if (SelectedOrientation == 2)
-                { myTable = new Table(2); }
-                if (SelectedOrientation == 1)
-                { myTable = new Table(1); }
-            else { myTable = new Table(3); }
-            //}
            
+            if (SelectedOrientation == 2)
+            { myTable = new Table(2); }
+            if (SelectedOrientation == 1)
+            { myTable = new Table(1); }
+            else { myTable = new Table(3); }
         }
     }
 }

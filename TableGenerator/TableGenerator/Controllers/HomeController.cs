@@ -38,26 +38,21 @@ namespace TableGenerator.Controllers
             return View(_viewmodel);
         }
 
-        //[HttpGet]
-        //public ActionResult ControllerName()
-        //{
-        //    var model = new TableViewModel();
-        //    model.Orientations = new List<SelectListItem>();
-        //    model.Orientations.Add(new SelectListItem() { Text = "Vertical", Value = "1", Selected = false });
-        //    model.Orientations.Add(new SelectListItem() { Text = "Horizontal", Value = "2", Selected = false });
-
-
-        //    // assign other SelectListItem list values here
-
-        //    return View(model);
-        //}
+       
         //[HttpPost]
         public IActionResult Privacy(/*[Bind("SelectedOrientation")] TableViewModel model*/)
         {
-        //    _viewmodel.SelectedOrientation= Request.Form()
+        //   
             _viewmodel.myTable= new Table(/*placeholder number*/ 0);
-            return View(_viewmodel);
+            return View();
             
+        }
+
+        public IActionResult DynamicTable()
+        {
+            String whatDO = Request.Form["SelectedOrientation"];
+            if (whatDO == "1") { _viewmodel.myTable = new Table(1); }
+            return View(_viewmodel);
         }
 
         public IActionResult HorizontalTable()
