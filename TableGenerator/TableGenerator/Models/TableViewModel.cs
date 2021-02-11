@@ -29,27 +29,27 @@ namespace TableGenerator.Models
         private static bool orientationsDone = false;
 
        
-       public TableViewModel(/*bool buildTable*/)
+       public TableViewModel()
         {
-            if (orientationsDone == false)
-            {
-                Orientations = new List<SelectListItem>();
-                Orientations.Add(new SelectListItem() { Text = "Vertical", Value = "1", Selected = false });
-                Orientations.Add(new SelectListItem() { Text = "Horizontal", Value = "2", Selected = false });
-                Lenght = new List<SelectListItem>();
-                Width = new List<SelectListItem>();
-                for(int i=1; i <= options; i++)
-                {
-                    Width.Add(new SelectListItem() { Text = $"{i}", Value = $"{i}", Selected = false });
-                    Lenght.Add(new SelectListItem() { Text = $"{i}", Value = $"{i}", Selected = false });
-                }
+            //if (orientationsDone == false)
+            //{
+            //    Orientations = new List<SelectListItem>();
+            //    Orientations.Add(new SelectListItem() { Text = "Vertical", Value = "1", Selected = false });
+            //    Orientations.Add(new SelectListItem() { Text = "Horizontal", Value = "2", Selected = false });
+            //    Lenght = new List<SelectListItem>();
+            //    Width = new List<SelectListItem>();
+            //    for(int i=1; i <= options; i++)
+            //    {
+            //        Width.Add(new SelectListItem() { Text = $"{i}", Value = $"{i}", Selected = false });
+            //        Lenght.Add(new SelectListItem() { Text = $"{i}", Value = $"{i}", Selected = false });
+            //    }
                 
 
 
-                SelectedOrientation = "";
-                orientationsDone = true;
+            //    SelectedOrientation = "";
+            //    orientationsDone = true;
 
-            }
+            //}
 
             //RowGraphic = "";
            
