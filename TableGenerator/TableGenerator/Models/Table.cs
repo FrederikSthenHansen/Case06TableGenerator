@@ -11,34 +11,35 @@ namespace TableGenerator.Models
         public int[][] Rows;
 
 
-        public Table(int orientation)
-        {   
-            Rows = new int[10][];
-            for (int r = 0; r < 10; r++) { Rows[r] = new int[10]; }
+        public Table(int orientation, int lenght, int width)
+        {   if (lenght == 0) {lenght = 10;}
+            if (width == 0) { width = 10; }
+            Rows = new int[lenght][];
+            for (int r = 0; r < lenght; r++) { Rows[r] = new int[width]; }
 
-            if (orientation==2) { MakeHorizontal();}
-            else if(orientation==1) { MakeVertical(); }
+            if (orientation==2) { MakeHorizontal(lenght,width);}
+            else if(orientation==1) { MakeVertical(lenght,width); }
 
             //reset counter after making table
             counter = 1;
         }
 
-        private void MakeHorizontal() 
+        private void MakeHorizontal(int lenght, int width) 
         {
-            for (int y = 0; y < 10; y++)
+            for (int y = 0; y < lenght; y++)
             {
-                for (int x = 0; x < 10; x++)
+                for (int x = 0; x < width; x++)
                 {
                     fillSpot(x, y, counter);
                 }
             }  
         }
 
-        private void MakeVertical() 
+        private void MakeVertical(int lenght, int width) 
         {
-            for (int x = 0; x < 10; x++)
+            for (int x = 0; x < width; x++)
             {
-                for (int y = 0; y < 10; y++)
+                for (int y = 0; y < lenght; y++)
                 {
                     fillSpot(x, y, counter);
                 }
