@@ -12,10 +12,16 @@ namespace TableGenerator.Models
 
 
         public Table(int orientation, int lenght, int width)
-        {   if (lenght == 0) {lenght = 10;}
+        {
+            #region set lenght/width to 10, if not set
+            if (lenght == 0) {lenght = 10;}
             if (width == 0) { width = 10; }
+            #endregion
+
+            #region Initialize matrix with 0 in every spot to avoid null-refferences , when filling out array
             Rows = new int[lenght][];
             for (int r = 0; r < lenght; r++) { Rows[r] = new int[width]; }
+            #endregion
 
             if (orientation==2) { MakeHorizontal(lenght,width);}
             else if(orientation==1) { MakeVertical(lenght,width); }

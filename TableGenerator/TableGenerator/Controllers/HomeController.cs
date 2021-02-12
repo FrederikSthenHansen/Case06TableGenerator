@@ -24,7 +24,7 @@ namespace TableGenerator.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            _viewmodel = new TableViewModel();
+            //_viewmodel = new TableViewModel();
             _viewmodel.Orientations = new List<SelectListItem>();
             _viewmodel.Orientations.Add(new SelectListItem() { Text = "Vertical", Value = "1", Selected = false });
             _viewmodel.Orientations.Add(new SelectListItem() { Text = "Horizontal", Value = "2", Selected = false });

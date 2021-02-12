@@ -10,12 +10,8 @@ namespace TableGenerator.Models
     public class TableViewModel
     {
         public Table myTable;
-        // public string RowGraphic { get; set; }
-
-        //public enum Orientation {Vertical, Horizontal}
-
-        //public Orientation TableOrientation { get {return Enum.GetValues}; set; 
-        private int options = 15;
+        
+        //private int options = 15;
 
         [BindProperty]
         public string SelectedOrientation { get; set ; }
@@ -26,7 +22,7 @@ namespace TableGenerator.Models
         public List<SelectListItem> Lenght { get; set; }
 
 
-        private static bool orientationsDone = false;
+        //private static bool orientationsDone = false;
 
        
        public TableViewModel()
